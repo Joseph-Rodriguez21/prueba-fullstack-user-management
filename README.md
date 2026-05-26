@@ -2,11 +2,11 @@
 
 Aplicación Full Stack desarrollada como prueba técnica utilizando React + ASP.NET Core Web API.
 
-El proyecto incluye autenticación JWT, roles de usuario, CRUD de usuarios, validaciones, protección de rutas y una interfaz moderna y responsive.
+El proyecto incluye autenticación JWT, manejo de roles, CRUD de usuarios, validaciones, protección de rutas y una interfaz moderna y responsive.
 
 ---
 
-# Repository Structure
+# Estructura del Proyecto
 
 ```bash
 frontend/
@@ -18,7 +18,7 @@ backend/
 
 ---
 
-# Technologies
+# Tecnologías Utilizadas
 
 ## Frontend
 - React 18
@@ -36,52 +36,56 @@ backend/
 
 ---
 
-# Main Features
+# Funcionalidades Principales
 
-## Authentication
-- User registration
-- JWT login authentication
-- Protected routes
-- Role-based authorization
+## Autenticación
+- Registro de usuarios
+- Inicio de sesión con JWT
+- Protección de rutas
+- Autorización basada en roles
 - Logout
 
-## User Management
+## Gestión de Usuarios
+
 ### Admin
-- View all users
-- Create users
-- Edit users
-- Delete users
-- Activate / deactivate users
-- Change user roles
+- Ver todos los usuarios
+- Crear usuarios
+- Editar usuarios
+- Eliminar usuarios
+- Activar / desactivar usuarios
+- Cambiar roles
 
 ### User
-- View own profile
-- Edit own profile only
-
-## UI / UX
-- Responsive design
-- User search
-- Pagination
-- Friendly error messages
-- Delete confirmation modal
-- Backend failure handling
+- Ver su propio perfil
+- Editar únicamente su perfil
 
 ---
 
-# Requirements
+# UI / UX
 
-Before running the project, install:
+- Diseño responsive
+- Búsqueda de usuarios
+- Paginación
+- Mensajes de error amigables
+- Modal de confirmación para eliminar
+- Manejo de errores cuando el backend no está disponible
+
+---
+
+# Requisitos Previos
+
+Antes de ejecutar el proyecto se necesita instalar:
 
 - .NET 8 SDK
 - Node.js 18+
-- SQL Server Express or LocalDB
+- SQL Server Express o LocalDB
 - Git
 
 ---
 
-# Backend Setup
+# Configuración del Backend
 
-## 1. Enter backend folder
+## 1. Entrar a la carpeta backend
 
 ```bash
 cd backend
@@ -89,7 +93,7 @@ cd backend
 
 ---
 
-## 2. Restore packages
+## 2. Restaurar paquetes
 
 ```bash
 dotnet restore
@@ -97,21 +101,21 @@ dotnet restore
 
 ---
 
-## 3. Configure User Secrets
+## 3. Configurar User Secrets
 
-### Initialize secrets
+### Inicializar secrets
 
 ```bash
 dotnet user-secrets init
 ```
 
-### JWT Secret
+### Configurar JWT Secret
 
 ```bash
 dotnet user-secrets set "Jwt:Key" "YOUR_SECRET_KEY"
 ```
 
-### SQL Server Connection String
+### Configurar Connection String
 
 ```bash
 dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost\\SQLEXPRESS;Database=FullStackDb;Trusted_Connection=True;TrustServerCertificate=True;"
@@ -119,17 +123,17 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost\
 
 ---
 
-## 4. Run migrations
+## 4. Ejecutar migraciones
 
 ```bash
 dotnet ef database update
 ```
 
-This creates the database and applies Entity Framework migrations automatically.
+Este comando crea la base de datos y aplica automáticamente las migraciones de Entity Framework.
 
 ---
 
-## 5. Run backend
+## 5. Ejecutar backend
 
 ```bash
 dotnet run
@@ -147,9 +151,9 @@ http://localhost:5009/swagger
 
 ---
 
-# Frontend Setup
+# Configuración del Frontend
 
-## 1. Enter frontend folder
+## 1. Entrar a frontend
 
 ```bash
 cd frontend
@@ -157,7 +161,7 @@ cd frontend
 
 ---
 
-## 2. Install dependencies
+## 2. Instalar dependencias
 
 ```bash
 npm install
@@ -165,7 +169,7 @@ npm install
 
 ---
 
-## 3. Run frontend
+## 3. Ejecutar frontend
 
 ```bash
 npm run dev
@@ -178,16 +182,16 @@ http://localhost:5173
 
 ---
 
-# Demo Credentials
+# Credenciales de Prueba
 
-## Admin
+## Administrador
 
 ```txt
 Email: admin@demo.com
 Password: Admin123!
 ```
 
-## User
+## Usuario
 
 ```txt
 Email: user@demo.com
@@ -196,15 +200,15 @@ Password: User123!
 
 ---
 
-# API Testing
+# Pruebas de API
 
-Swagger is available at:
+Swagger está disponible en:
 
 ```bash
 http://localhost:5009/swagger
 ```
 
-## Example Login Request
+## Ejemplo Login
 
 ```json
 {
@@ -213,7 +217,7 @@ http://localhost:5009/swagger
 }
 ```
 
-After login, copy the JWT token and authorize Swagger using:
+Después de iniciar sesión, copiar el token JWT y autorizar Swagger utilizando:
 
 ```text
 Authorize → Bearer <token>
@@ -221,29 +225,29 @@ Authorize → Bearer <token>
 
 ---
 
-# Security
+# Seguridad Implementada
 
-- Passwords hashed using BCrypt
-- JWT authentication with expiration
-- Role-based authorization
-- Protected routes
-- Sensitive variables stored using User Secrets
-- Frontend and backend validations
+- Contraseñas cifradas utilizando BCrypt
+- JWT con expiración
+- Autorización basada en roles
+- Protección de rutas
+- Variables sensibles almacenadas mediante User Secrets
+- Validaciones tanto en frontend como backend
 
 ---
 
-# Future Improvements
+# Mejoras Futuras
 
 - Refresh Tokens
-- Persistent avatar upload
-- API pagination and filtering
+- Persistencia real de avatares
+- Paginación y filtrado desde API
 - Docker Compose
-- Automated testing
-- Logging system
-- Accessibility improvements
+- Testing automatizado
+- Sistema de logging
+- Mejoras de accesibilidad
 
 ---
 
-# Author
+# Autor
 
 Joseph Emmanuel Rodriguez Ramirez
